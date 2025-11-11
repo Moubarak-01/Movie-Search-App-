@@ -12,9 +12,9 @@ A responsive React app that allows users to search for movies and displays offic
 
 ## 📸 Screenshots
 
-<img src="path/to/image1.png" alt="Movie Search App Screenshot 1" width="300"/>  
-<img src="path/to/image2.png" alt="Movie Search App Screenshot 2" width="300"/>  
-<img src="path/to/image3.png" alt="Movie Search App Screenshot 3" width="300"/>  
+<img src="preview 1.png" alt="Movie Search App Screenshot 1" width="300"/>  
+<img src="preview 2.png" alt="Movie Search App Screenshot 2" width="300"/>  
+<img src="preview 3.png" alt="Movie Search App Screenshot 3" width="300"/>  
 
 ---
 
