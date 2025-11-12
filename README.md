@@ -72,5 +72,3 @@ VITE_APPWRITE_ENDPOINT=your_appwrite_endpoint
 
 > ⚠️ **Make sure you replace** all placeholders with your actual API keys. The app **won't work without them**.
 
-4. Start the development server:
----
