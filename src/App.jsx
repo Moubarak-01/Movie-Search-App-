@@ -84,10 +84,12 @@ const App = () => {
 
   return (
     <main>
+      <h1 style={{ textAlign: 'center', marginTop: '2rem' }}>Movie Search App</h1>
+
       <div className="pattern"/>
 
       <div className="wrapper">
-       <header>
+
           <img src="/logo.png" alt="Logo" className="size-20 mt-0.5" />
           <img src="/hero.png" alt="Hero Banner" className="size-auto" />
           <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without too much Hassle</h1>
