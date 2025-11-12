@@ -53,7 +53,7 @@ A responsive React app that allows users to search for movies and displays offic
 
 1. Clone the repository:
 
-git clone [github.com/yourusername/movie-search-app.git](https://github.com/Moubarak-01/Movie-Search-App-)  
+git clone https://github.com/Moubarak-01/Movie-Search-App-  
 cd movie-search-app
 
 2. Install dependencies:
