@@ -30,7 +30,8 @@ A responsive React app that allows users to search for movies and displays offic
 
 ## 🔋 Features
 
-- Search for any movie and view its poster dynamically.  
+- Search for any movie and view its poster dynamically.
+- Trending Movies added.
 - Real-time search with intuitive, user-friendly UI.  
 - Fully responsive design across devices.  
 - Modular React components for maintainable code.  
