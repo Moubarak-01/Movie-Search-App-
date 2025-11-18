@@ -67,7 +67,31 @@ const App = () => {
 
   const loadTrendingMovies = async () => {
     try {
-      const movies = await getTrendingMovies();
+      // First try Appwrite collection (if you have popularity counts stored)
+      let movies = await getTrendingMovies();
+
+      // If Appwrite is empty or unavailable, fall back to TMDB trending endpoint
+      if (!Array.isArray(movies) || movies.length === 0) {
+        const tmdbResp = await fetch(`${API_BASE_URL}/trending/movie/week?api_key=${API_KEY}`, API_OPTIONS);
+        if (tmdbResp.ok) {
+          const tmdbData = await tmdbResp.json();
+          movies = (Array.isArray(tmdbData.results) ? tmdbData.results : []).slice(0, 10).map(m => ({
+            $id: m.id,
+            id: m.id,
+            title: m.title || m.name,
+            poster_url: m.poster_path ? `https://image.tmdb.org/t/p/w500${m.poster_path}` : '',
+          }));
+        } else {
+          movies = [];
+        }
+      } else {
+        // Ensure each Appwrite document has a `poster_url` property
+        movies = movies.map(m => ({
+          ...m,
+          poster_url: m.poster_url || (m.poster_path ? `https://image.tmdb.org/t/p/w500${m.poster_path}` : ''),
+        }));
+      }
+
       setTrendingMovies(Array.isArray(movies) ? movies : []);
     } catch (error) {
       console.error(`Error fetching trending movies: ${error}`);
@@ -91,7 +115,7 @@ const App = () => {
         <header>
           <img src="/logo.png" alt="Logo" className="size-20 mt-0.5" />
           <img src="/hero.png" alt="Hero Banner" className="size-auto" />
-          <h1>Find <span className="text-gradient">Movies</span> You'll Enjoy Without too much Hassle</h1>
+          <h1>Find <span className="text-gradient">Movies</span> You will Enjoy Without too much Hassle</h1>
 
           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         </header>
